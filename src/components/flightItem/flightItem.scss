@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.btn.choose {
+  background-color: $color-orange;
+  color: white;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 0;
+  text-transform: uppercase;
+}

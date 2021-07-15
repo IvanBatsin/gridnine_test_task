@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { FlightsList } from './components/flightsList/FlightsList';
+import { FilterMenu } from './components/filterMenu/FilterMenu';
+
+import { FlightsContextProvider } from './context';
+
+export const App: React.FC = () => {
+  const [showFilters, setShowFilters] = React.useState<boolean>(false);
+
+  const handleShowFilters = () => {
+    setShowFilters(prevState => !prevState);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FlightsContextProvider>
+      <div className="App">
+        <button onClick={handleShowFilters} className="btn btn-filters">Фильтры</button>
+        <FilterMenu closeFilters={handleShowFilters} show={showFilters}/>
+        <FlightsList/>
+      </div>
+    </FlightsContextProvider>
   );
 }
-
-export default App;

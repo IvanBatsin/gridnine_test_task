@@ -1,0 +1,123 @@
+@import '../../styles/variables.scss';
+
+.flight_item {
+  &.divider {
+    border-bottom: 2px solid $color-primary;
+  }
+
+  &_header {
+    padding: 10px;
+    background-color: rgb(97, 157, 248);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .flight_price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .price {
+        font-weight: $fw-bold;
+      }
+      .info {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .from_to {
+    border-bottom: 1px solid rgb(218, 218, 218);
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    align-items: baseline;
+
+    .divider {
+      margin: 0 5px;
+    }
+
+    @media screen and (max-width: $breakpoint-md-max) {
+      & {
+        justify-content: space-between;
+        .from, .to {
+          font-size: 14px;
+
+          .blue {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-sm-max) {
+      & {
+        .from, .to {
+          font-size: 12px;
+
+          .blue {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .travel_time {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .total_time {
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: $fw-medium;
+    }
+
+    .departure_date, .arrival_date {
+      font-size: 12px;
+    }
+
+    .departure_date {
+      margin-left: 5px;
+    }
+    .arrival_date {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm-max) {
+      & {
+        .total_time {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .stops {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: rgb(160, 160, 160);
+
+    span {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5px 10px;
+      display: block;
+      z-index: 1;
+      background-color: white;
+      color: $color-orange;
+      font-size: 12px;
+    }
+  }
+
+  .carrier {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

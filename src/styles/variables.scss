@@ -1,0 +1,57 @@
+// Variables
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$color-primary: #1071FF;
+$color-primary-light: #88b7ff;
+$color-primary-lines-gray: rgba(0, 0, 0, .08);
+$color-light-theme-primary: rgba(0, 0, 0, .87);
+$color-light-theme-secondary: rgba(0, 0, 0, .54);
+$color-orange: rgb(238, 176, 82);
+
+$transition: .2s;
+
+$breakpoint-xs-min: 0;
+$breakpoint-xs-max: $breakpoint-xs-min - 1px;
+$breakpoint-sm-min: 576px;
+$breakpoint-sm-max: $breakpoint-sm-min - 1px;
+$breakpoint-md-min: 768px;
+$breakpoint-md-max: $breakpoint-md-min - 1px;
+$breakpoint-lg-min: 992px;
+$breakpoint-lg-max: $breakpoint-lg-min - 1px;
+$breakpoint-xl-min: 1200px;
+$breakpoint-xl-max: $breakpoint-xl-min - 1px;
+$breakpoint-xx-min: 1400px;
+$breakpoint-xx-max: $breakpoint-xx-min - 1px;
+// Variables
+
+// Mixins
+@mixin list_styles_remove {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@mixin btn_styles_remove {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+// Mixins
+
+// Common
+.btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: $transition;
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+// Common

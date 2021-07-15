@@ -1,0 +1,121 @@
+@import '../../styles/variables.scss';
+
+.cbx {
+  position: relative;
+  background: rgba(0, 0, 0, 0.05);
+  top: 1px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  vertical-align: middle;
+  transition: background .1s ease;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 0;
+
+  &.reverse {
+    background: white;
+  }
+
+  &.reverse {
+    margin-right: 0;
+  }
+
+  &.short {
+    margin-right: 8px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 4px;
+    height: 9px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid $color-primary;
+    border-bottom: 2px solid $color-primary;
+    transition: all $transition ease;
+    transition-delay: .15s; 
+  }
+}
+
+.label {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  margin-bottom: 0;
+  user-select: none;
+  transition: $transition;
+  color: $color-light-theme-secondary;
+
+  &:hover {
+    color: black;
+  }
+
+  &.reverse {
+    margin-left: 0;
+  }
+}
+  
+.hidden-xs-up:checked ~ .cbx {
+  border-color: transparent;
+  background: rgba(0, 0, 0, 0.05);
+  animation: jelly .6s ease;
+
+  &.reverse {
+    background: white;
+  }
+
+  &:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+.hidden-xs-up:checked ~ .label {
+  color: black;
+}
+.hidden-xs-up:checked ~ .label.reverse {
+  color: $color-primary;
+}
+   
+@keyframes jelly {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, .95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+
+  &.reverse {
+    justify-content: space-between;
+  }
+
+  input {
+    display: none;
+  }
+}
